@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Zone to Needit Map">18b987ca07f201107bdbf61d7c1ed0e2</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	var Zcode=source.getValue("u_code"); // Get code from import table
+	var sp= gs.getProperty('port.country.code');  //Get code values from system property "port.country.code"
+	spvalue= JSON.parse(sp);
+
+		target.u_zone=spvalue[Zcode];
+	
+	
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-13 08:28:04</sys_created_on>
+        <sys_id>792a478e07f201107bdbf61d7c1ed002</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>onBefore</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_transform_script_792a478e07f201107bdbf61d7c1ed002</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-16 16:29:17</sys_updated_on>
+        <when>onBefore</when>
+    </sys_transform_script>
+</record_update>
